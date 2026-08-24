@@ -1,0 +1,117 @@
+{
+  "theme_strategy": {
+    "mode": "light",
+    "description": "Clean, light-mode base for trustworthiness and clinical clarity. The platform shifts to a 'High-Alert Mode' (dark/red) exclusively during the active Emergency SOS workflow."
+  },
+  "typography": {
+    "primary_heading_font": "Outfit",
+    "secondary_heading_font": "Outfit",
+    "body_font": "Manrope",
+    "monospace_font": "JetBrains Mono",
+    "scale_rules": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-none font-bold",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight font-semibold",
+      "h3": "text-xl sm:text-2xl font-semibold",
+      "h4": "text-lg sm:text-xl font-medium",
+      "body": "text-base leading-relaxed",
+      "labels": "text-xs tracking-[0.2em] uppercase font-semibold text-slate-500"
+    },
+    "forbidden_fonts": ["Inter", "Roboto", "Open Sans", "Space Grotesk"]
+  },
+  "colors": {
+    "archetype": "Organic & Earthy + Swiss Clarity",
+    "backgrounds": {
+      "page": "bg-slate-50",
+      "surface": "bg-white",
+      "surface_glass": "bg-white/70 backdrop-blur-xl border-slate-200/50"
+    },
+    "text": {
+      "primary": "text-slate-900",
+      "secondary": "text-slate-500",
+      "inverse": "text-white"
+    },
+    "brand": {
+      "primary": "bg-sky-600 hover:bg-sky-700",
+      "primary_text": "text-sky-600",
+      "soft_accent": "bg-sky-50 border-sky-100",
+      "note": "Avoid using teal (#1B93A4) as per forbidden rules. Use Sky and Slate to fulfill the 'soft blue/teal' user request without breaking dashboard rules."
+    },
+    "status": {
+      "emergency": "bg-red-500 text-white",
+      "attention": "bg-orange-500 text-white",
+      "info": "bg-sky-500 text-white",
+      "success": "bg-emerald-500 text-white"
+    },
+    "emergency_mode": {
+      "page": "bg-red-950",
+      "surface": "bg-red-900/50 border-red-500/30",
+      "text": "text-red-50"
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous Spacing (p-6 to p-12) for calm navigation, tight density (gap-4) only inside specific clinical data grids.",
+    "marketing_page": {
+      "grid": "Bento Grid Protocol - Mode A (Tetris Grid). Asymmetrical layout, wide gaps (gap-8 to gap-12)."
+    },
+    "dashboards": {
+      "grid": "High Density Grid (Mode B). grid-cols-1 md:grid-cols-3 lg:grid-cols-4, gap-6.",
+      "hierarchy": "F-pattern. Place critical alerts/patient identity in top-left."
+    },
+    "cards": {
+      "style": "Rounded cards (rounded-2xl) as per user request. 1px border (border-slate-200), minimal shadow (shadow-sm). No full-screen gradients."
+    }
+  },
+  "components": {
+    "ui_library": "shadcn/ui",
+    "customizations": {
+      "buttons": "Pill-shaped (rounded-full) or generously rounded (rounded-xl) for primary actions. Distinct hover states.",
+      "inputs": "Shadcn inputs with slightly larger padding (h-12) for accessibility and touch targets.",
+      "navigation": "Mobile-first bottom nav for patient view (Home, Care, Emergency, Passport, Profile). Glassmorphic floating top nav for desktop.",
+      "cards": "Do not overuse the Shadcn Card component default padding; customize it for density.",
+      "charts": "Shadcn chart (recharts) for Medication adherence and Admin analytics. Must be color-blind friendly."
+    },
+    "specific_features": {
+      "sos_button": "Always accessible. Floating or prominent in bottom nav. Uses pulsing micro-animation (animate-pulse).",
+      "emergency_timeline": "Animated state machine. Use Framer Motion to transition steps: SOS_ACTIVATED -> CAREGIVER_NOTIFIED -> RESPONDER_ASSIGNED -> AMBULANCE_EN_ROUTE -> HOSPITAL_NOTIFIED -> PATIENT_ARRIVED -> CASE_CLOSED.",
+      "ocr_view": "Split view (original image left vs. extracted data right). Highlight extracted fields.",
+      "simulated_map": "Responder dashboard requires a map visualization. Use a static dark map image or SVG grid background, overlaid with animated CSS/Framer Motion markers for Patient, Ambulance, and Hospital, showing an active route line."
+    }
+  },
+  "motion_and_interactions": {
+    "philosophy": "Micro-interactions for feedback, delight, and urgency.",
+    "medication_completion": "Progress bar filling animation and a subtle bounce effect on the checkmark.",
+    "emergency_pulse": "Continuous dual-ring pulse around the active SOS button to draw attention.",
+    "map_markers": "Pulsing dots for live locations on the Responder dashboard.",
+    "hover_states": "All cards should slightly lift (-translate-y-1) and increase shadow on hover."
+  },
+  "visual_enhancers": {
+    "glassmorphism": "Used ONLY for floating elements (Top Nav, Voice Assistant button, Bottom Nav on mobile, Emergency SOS floating trigger) to maintain optical clarity on clinical data.",
+    "textures": "Subtle noise/grain overlay on the marketing hero section to feel like a premium startup, not a sterile hospital.",
+    "data_visualization": "Explainable AI insights must clearly separate 'Why?' (evidence) and 'Confidence' (score %)."
+  },
+  "accessibility": {
+    "contrast": "APCA contrast standards. Minimum 4.5:1 for normal text.",
+    "testing": "All interactive elements MUST include data-testid attributes (e.g., data-testid='sos-activate-button', data-testid='medication-complete-checkbox').",
+    "alerts": "Never use color alone for alerts. Pair red/orange with warning icons (e.g., Lucide AlertTriangle)."
+  },
+  "media_and_icons": {
+    "icon_library": "lucide-react",
+    "images": {
+      "patient_avatar": "https://images.pexels.com/photos/30514043/pexels-photo-30514043.jpeg",
+      "doctor_avatar": "https://images.pexels.com/photos/15962798/pexels-photo-15962798.jpeg",
+      "responder_avatar": "https://images.pexels.com/photos/6519883/pexels-photo-6519883.jpeg",
+      "prescription_sample": "https://images.unsplash.com/photo-1584308666744-24d5e4b77f1f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzczODV8MHwxfHNlYXJjaHwxfHxwcmVzY3JpcHRpb258ZW58MHx8fHwxNjg4MDc5NzEwfDA&ixlib=rb-4.0.3&q=85",
+      "hero_background": "https://images.unsplash.com/photo-1551076805-e1869043e560?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzczODV8MHwxfHNlYXJjaHw0fHxoZWFsdGhjYXJlJTIwdGVjaHxlbnwwfHx8fDE2ODgwNzk3MTB8MA&ixlib=rb-4.0.3&q=85"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Build a Hybrid Fullstack app: Start with a Marketing Landing Page, then build a Role-Switching login to access the 6 dashboards.",
+    "Ensure 'Outfit' and 'Manrope' fonts are imported from Google Fonts in index.html.",
+    "Do NOT use HTML <select> or <input type='date'>; strictly use Shadcn Select and Calendar components.",
+    "Create an Emergency State Context that wraps the application. When SOS is active, the UI must visually switch to indicate the emergency (e.g., red banners, dark mode toggle, flashing alerts).",
+    "Implement the 'Demo Control Center' to simulate the emergency state machine globally.",
+    "Do not add universal transitions (e.g., transition-all). Add transitions only to specific properties like background-color, transform.",
+    "Ensure mobile responsiveness with a Bottom Navigation bar for the Patient dashboard.",
+    "Do not use generic AI emojis; stick to Lucide icons."
+  ]
+}
